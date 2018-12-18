@@ -1,0 +1,1 @@
+Á·ÊÖÏîÄ¿£¬nginx+uwsgi+flask+virtualenv
