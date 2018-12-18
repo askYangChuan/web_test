@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% import "_macros.html" as macros %}
+
+{% block title %}FlowMsg - 家庭流水查询{% endblock %}
+
+{% block head %}
+{{ super() }}
+<link href="css/style.min862f.css?v=4.1.0" rel="stylesheet">
+<link href="css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+<link href="css/style.min862f.css?v=4.1.0" rel="stylesheet">
+<style type="text/css">
+    td{
+        white-space: nowrap;
+    }
+</style>
+<!--
+<style type="text/css">
+        td
+        {
+            white-space: nowrap;
+        }
+    </style>
+-->
+{% endblock %}
+{% block page_content %}
+<div class="page-header">
+    <h1>家庭流水查询</h1>
+</div>
+{% include '_flowmsgs.html' %}
+{% if pagination %}
+<div class="pagination">
+    {{ macros.pagination_widget(pagination, '.showresult') }}
+</div>
+{% endif %}
+{% endblock %}

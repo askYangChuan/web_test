@@ -1,0 +1,32 @@
+<div class="col-sm-6">
+        <div class="ibox-title">
+            <h5>基本</h5>
+        </div>
+        <div class="ibox-content">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>HomeId</th>
+                        <th>UserId</th>
+                        <th>Sn</th>
+                        <th>msgstr</th>
+                        <th>todo</th>
+                        <th>ctime</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for flowmsg in flowmsgs %}
+                    <tr>
+                        <td>{{ flowmsg.flowmsg.home_id }}</td>
+                        <td>{{ flowmsg.flowmsg.user_id }}</td>
+                        <td>{{ flowmsg.flowmsg.sn }}</td>
+                        <td>{{ flowmsg.flowmsg.msgstr }}</td>
+                        <td>{{ flowmsg.desc }}</td>
+                        <td>{{ flowmsg.flowmsg.ctime }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+</div>
+
