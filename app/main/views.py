@@ -6,6 +6,7 @@ sys.setdefaultencoding('utf8')
 
 import time
 from flask import render_template, flash, session, redirect, url_for, request
+from flask_login import login_required, current_user
 from . import main
 from .forms import QueryForm
 from .definition_internal import QueryIndexType
@@ -98,6 +99,7 @@ def index():
     
     
 @main.route('/query', methods=['GET', 'POST'])
+@login_required
 def query():
     form = QueryForm()
     if form.validate_on_submit():
@@ -117,6 +119,7 @@ def query():
 
 
 @main.route('/result')
+@login_required
 def showresult():
     if not check_querysession():
         flash('输入条件有误')
