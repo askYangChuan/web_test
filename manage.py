@@ -7,7 +7,8 @@ from app.models import FlowMsg
 from flask_script import Manager, Shell
 from sqlalchemy  import and_
 
-app = create_app(os.getenv('FLASK_CONFIG') or 'default')
+#app = create_app(os.getenv('FLASK_CONFIG') or 'default')
+app = create_app(os.getenv('FLASK_CONFIG') or 'production')
 manager = Manager(app)
 
 def datetime_toTimestamp(dt):
